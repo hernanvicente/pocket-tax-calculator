@@ -1,0 +1,35 @@
+.pure-g
+  .pure-u-1.text-center
+    == slim :form
+.pure-g
+  .pure-u-1.text-center
+    table.pure-table.centered-table
+      thead
+        tr
+          th
+            | total gross
+          th
+            | net
+          th
+            | tax1 (18%)
+          th
+            | paid
+          th
+            | detracted (9%)
+          th
+            | tax1 to pay
+          th
+            | tax2 to pay (2%)
+          th
+            | to pay
+        tbody
+          tr
+            td= @taxes.total_gross
+            td= @taxes.sales
+            td= @taxes.tax1
+            td= @taxes.paid_by_client
+            td= @taxes.to_detract
+            td= @taxes.tax1 - @taxes.to_detract
+            td= @taxes.tax2
+            td= @taxes.to_pay
+
